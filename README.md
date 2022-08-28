@@ -172,3 +172,23 @@ git add .
 git commit -m "stage 01 added"
 git push origin main
 ```
+
+## STEP 13 : Sometime dvc repro gives error as below .
+
+```bash
+> python src/stage_01_load_save.py --config=config/config.yaml
+directory is created at artifacts\raw_local_dir
+ERROR: failed to reproduce 'load_data':  output 'artifacts\raw_local_dir\data.csv' is already tracked by SCM (e.g. Git).
+    You can remove it from Git, then add to DVC.
+        To stop tracking from Git:
+            git rm -r --cached 'artifacts\raw_local_dir\data.csv'
+            git commit -m "stop tracking artifacts\raw_local_dir\data.csv"
+
+```
+
+So run below : (Because we want out data to be tracked by DVC , not Git)
+
+```bash
+git rm -r --cached 'artifacts\raw_local_dir\data.csv'
+git commit -m "stop tracking artifacts\raw_local_dir\data.csv"
+```
