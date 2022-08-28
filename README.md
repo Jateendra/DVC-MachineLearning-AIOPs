@@ -186,7 +186,7 @@ ERROR: failed to reproduce 'load_data':  output 'artifacts\raw_local_dir\data.cs
 
 ```
 
-So run below : (Because we want out data to be tracked by DVC , not Git)
+So run below , so this will not be pushed to git : (Because we want out data to be tracked by DVC , not Git)
 
 ```bash
 git rm -r --cached 'artifacts\raw_local_dir\data.csv'
